@@ -15,11 +15,11 @@ In this example, a 4-joint robot with 2 DOF is illustrated. The first joint is f
 
 Matlab code to plot a trajectory from a initial state `q0` to a final state `qf` as well as showing a graphical representation of a random robot. This code uses [Peter's Corke Matlab Toolbox](https://petercorke.com/toolboxes/robotics-toolbox/).
 
-The output for the trajectory part is shown below.
+The output for the trajectory part is shown below, considering that the robot will move from a initial state [pi/2 0 pi/6 40] to a final state [pi/2 pi/2 pi/6 60].
 
 ![](img/Trajectory.png)
 
-The 3D representation of the robot is illustrated on the following image.
+The 3D representation of the robot in the initial state is illustrated on the following image.
 
 ![](img/RobotModel.png)
 
