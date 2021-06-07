@@ -1,4 +1,4 @@
-%Definition of each joint lenght
+        %Definition of each joint lenght
 L1 = 40;
 L2 = 45;
 L3 = 35;
@@ -27,10 +27,10 @@ Rob.name = 'Finger Robot';
 
 %This is the initial state for the robot, note that for the prismatic
 %joint, the value is equal to the lenght
-q0 = ([pi/10 pi/6 pi/6 40]);
+q0 = ([pi/2 0 pi/6 40]);
 
 %This is the final state, so the trajectory can be plotted. 
-qf = ([pi/8 pi/2 pi/4 60]);
+qf = ([pi/2 pi/2 pi/6 60]);
 
 %Simulate a time variable, generating a time vector
 t = ([0:0.05:5]);
@@ -41,27 +41,27 @@ T = Rob.fkine(q);
 %where T is a vector of SE3 objects.For example, the first point is T(1)
 %the translational part of this can be extracted using the transl method
 p = T.transl;
-subplot(2,1,1);
+%subplot(2,1,1);
 %extract and plot X coordinate
-plot(t,p(:,1));
+%plot(t,p(:,1));
 xlabel('Time (s)');
 ylabel('X (mm)');
-subplot(2,1,2);
+%subplot(2,1,2);
 %extract and plot Z coordinate
 plot(t, p(:,3));
-xlabel('Time (s)');
+%xlabel('Time (s)');
 ylabel('Z (mm)');
 
 % The Y part is commented out for future work
-%subplot(1,1,1)
+%subplot(3,1,3)
 %plot(p(:,1), p(:,3));
 
 %Next lines of code will draw the robot at theta=0, this line can be used
 %to verify how the theta will vary with a mechanical model of the robot
 
 %The W is the limit for each axis
-W = [-100, 150 -100 100 -10 200];
+W = [-100, 150 -100 150 -10 200];
 
-%Rob.plot([pi/10 pi/6 pi/6 40], 'workspace',W,'jointdiam', 0.1,'nobase','noname','wrist');
+Rob.plot([pi/2 0 pi/6 40], 'workspace',W,'jointdiam', 0.1,'nobase','noname','wrist');
 
 
